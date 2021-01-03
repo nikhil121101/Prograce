@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "52662950633",
+    "project_id": "prograce-e3b51",
+    "storage_bucket": "prograce-e3b51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52662950633:android:e8408f6deeb273cc806e78",
+        "android_client_info": {
+          "package_name": "com.example.prograce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "52662950633-bhso6c2lh5kv0nrcv9j39325osfc8tp6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.prograce",
+            "certificate_hash": "bbb4b728f045573403eea84b24e942fe6e4bbc8b"
+          }
+        },
+        {
+          "client_id": "52662950633-cpn9dcp98v13sneseqsogroeuu9jrq9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBFP4pY2eCVwmY1HfZfh0K1WEAO28Oqj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "52662950633-cpn9dcp98v13sneseqsogroeuu9jrq9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
