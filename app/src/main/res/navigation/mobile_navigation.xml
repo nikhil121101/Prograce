@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/welcomeFragment">
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.example.prograce.WelcomeFragment"
-        android:label="WelcomeFragment" />
+        android:name="com.example.prograce.ui.welcomeScreen.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_projectsFragment"
+            app:destination="@id/projectsFragment"
+            app:popUpTo="@id/projectsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectsFragment"
+        android:name="com.example.prograce.ui.projectsScreen.ProjectsFragment"
+        android:label="projects_fragment"
+        tools:layout="@layout/projects_fragment" >
+        <action
+            android:id="@+id/action_projectsFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_projectsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.prograce.ui.profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
 </navigation>

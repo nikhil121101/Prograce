@@ -19,7 +19,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Prograce.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Prograce.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <item name="android:actionMenuTextColor">@color/black</item>
+    </style>
 
     <style name="Theme.Prograce.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

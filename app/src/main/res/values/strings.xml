@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Prograce</string>
+    <string name="facebook_application_id" translatable="false">453581462310444</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb453581462310444</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -17,4 +20,7 @@
     <string name="logo_of_app">logo of app</string>
     <string name="we_ll_manage_it">We\'ll manage it</string>
     <string name="prograce">Prograce</string>
+    <string name="sign_out">Sign out</string>
+    <string name="display_name">Display name</string>
+    <string name="profile_pic">profile pic</string>
 </resources>
