@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.prograce.R
-import com.example.prograce.databinding.FragmentWelcomeBinding
+import com.example.prograce.databinding.WelcomeFragmentBinding
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.ActionCodeSettings
@@ -26,32 +26,20 @@ class WelcomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        val binding =  FragmentWelcomeBinding.inflate(inflater, container, false)
+        val binding =  WelcomeFragmentBinding.inflate(inflater, container, false)
 
-        if(FirebaseAuth.getInstance().currentUser == null) {
-            binding.progressBar.visibility = View.GONE
-            binding.loginOrRegister.apply {
-                visibility = View.VISIBLE
-                setOnClickListener{
-                    startFirebaseUi()
-                }
-            }
-        }
-        else {
-            findNavController().navigate(R.id.action_welcomeFragment_to_projectsFragment)
+        binding.loginOrRegister.setOnClickListener{
+            startActivityForResult(
+                AuthUI.getInstance()
+                    .createSignInIntentBuilder()
+                    .setAvailableProviders(getAvailableProviders())
+                    .setTheme(R.style.Theme_Prograce_NoActionBar)
+                    .setLogo(R.drawable.ic_app_logo)
+                    .build(),
+                RC_SIGN_IN)
         }
 
         return binding.root
-    }
-
-    private fun startFirebaseUi() {
-        startActivityForResult(
-                AuthUI.getInstance()
-                        .createSignInIntentBuilder()
-                        .setAvailableProviders(getAvailableProviders())
-                        .setLogo(R.drawable.ic_app_logo)
-                        .build(),
-                RC_SIGN_IN)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -63,16 +51,17 @@ class WelcomeFragment : Fragment() {
             if (resultCode == Activity.RESULT_OK) {
                 // Successfully signed in
                 findNavController().navigate(R.id.action_welcomeFragment_to_projectsFragment)
+
             } else {
                 // Sign in failed. If response is null the user canceled the
                 // sign-in flow using the back button. Otherwise check
                 // response.getError().getErrorCode() and handle the error.
                 // ...
                 if(response == null) {
-                    Toast.makeText(context, "Authentication cancelled", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Login cancelled", Toast.LENGTH_LONG).show()
                 }
                 else {
-                    Toast.makeText(context, "Some error occurred, sorry!!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Something is wrong, Please try Again!!", Toast.LENGTH_LONG).show()
                     Log.i("Authentication error", response.error?.message!!)
                 }
             }
@@ -91,16 +80,6 @@ class WelcomeFragment : Fragment() {
                 AuthUI.IdpConfig.PhoneBuilder().build(),
                 AuthUI.IdpConfig.GoogleBuilder().build(),
                 AuthUI.IdpConfig.FacebookBuilder().build())
-    }
-
-    override fun onResume() {
-        super.onResume()
-        (activity as AppCompatActivity).supportActionBar!!.hide()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        (activity as AppCompatActivity).supportActionBar!!.show()
     }
 
 

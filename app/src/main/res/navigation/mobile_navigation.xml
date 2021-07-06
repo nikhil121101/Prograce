@@ -7,7 +7,8 @@
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.example.prograce.ui.welcomeScreen.WelcomeFragment"
-        android:label="WelcomeFragment" >
+        android:label="WelcomeFragment"
+        tools:layout="@layout/welcome_fragment">
         <action
             android:id="@+id/action_welcomeFragment_to_projectsFragment"
             app:destination="@id/projectsFragment"
@@ -22,13 +23,5 @@
             android:id="@+id/action_projectsFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
             app:popUpTo="@id/welcomeFragment" />
-        <action
-            android:id="@+id/action_projectsFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.prograce.ui.profile.ProfileFragment"
-        android:label="profile_fragment"
-        tools:layout="@layout/profile_fragment" />
 </navigation>
