@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/indigo_700"
+    android:background="@color/indigo_dark"
     tools:context="com.example.prograce.ui.welcomeScreen.WelcomeFragment">
 
 
@@ -53,7 +53,7 @@
         android:fontFamily="@font/autour_one"
         android:text="@string/prograce"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="@color/indigo_200"
+        android:textColor="@color/indigo_light"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/wellManageIt"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,7 +96,7 @@
         android:text="@string/login_or_register"
         android:visibility="gone"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/indigo_200"
+        android:textColor="@color/indigo_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
